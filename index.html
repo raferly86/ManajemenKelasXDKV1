@@ -165,9 +165,9 @@
                 <div class="relative w-full max-w-[400px] mx-auto aspect-square flex justify-center mt-2 mb-4">
                     <!-- Resolusi internal canvas diperbesar (800x800) agar teks lebih besar dan tajam -->
                     <canvas id="canvasWheel" width="800" height="800" class="w-full h-full rounded-full shadow-2xl border-4 border-white bg-gray-50"></canvas>
-                    <!-- Indikator panah merah diubah ke kiri, ukurannya disesuaikan proporsional -->
-                    <div class="absolute top-1/2 -left-5 sm:-left-6 transform -translate-y-1/2 z-20 text-red-600 text-5xl sm:text-6xl" style="filter: drop-shadow(3px 0px 3px rgba(0,0,0,0.3));">
-                        <i class="fas fa-caret-right"></i>
+                    <!-- Indikator panah merah diubah ke kanan, ukurannya disesuaikan proporsional -->
+                    <div class="absolute top-1/2 -right-5 sm:-right-6 transform -translate-y-1/2 z-20 text-red-600 text-5xl sm:text-6xl" style="filter: drop-shadow(-3px 0px 3px rgba(0,0,0,0.3));">
+                        <i class="fas fa-caret-left"></i>
                     </div>
                 </div>
 
@@ -798,9 +798,9 @@
             cancelAnimationFrame(spinTimeout);
             isSpinning = false;
             
-            // Menghitung hasil (potongan yang ada di angka 180 derajat / paling kiri)
+            // Menghitung hasil (potongan yang ada di angka 0 derajat / paling kanan)
             const normalizedStartAngle = (startAngle * 180 / Math.PI) % 360;
-            const pointerAngle = 180; 
+            const pointerAngle = 0; 
             const arcd = arc * 180 / Math.PI;
             
             const relativeAngle = (pointerAngle - normalizedStartAngle + 360) % 360;
